@@ -42,6 +42,7 @@ function compfitxer(){
    fi
    
    #operacion final
+   echo "$iguales / $lineas2 * 100"
    operacion=$(echo "scale=2; $iguales / $lineas2 * 100" | bc)
    echo "El resultat es $operacion%" >> resultat/resultat.txt
 
