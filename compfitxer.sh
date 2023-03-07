@@ -1,15 +1,8 @@
 #!/bin/bash
 
-
-file1=$1
-file2=$2
-args=("$@")
-
 #s: que queremos buscar y remplazar
 #g: sustitucion global
 # -i: cambiamos el fichero directamente
-
-
 
 #   for arg in "${args[@]}"
 #   do            
@@ -19,6 +12,9 @@ args=("$@")
 #        sed -i ':a; N; s/\n//; ta' $arg 
 #   done
 
+file1=$1
+file2=$2
+args=("$@")
 
 function compfitxer(){
 
@@ -26,20 +22,31 @@ function compfitxer(){
    diff -Bbiw $file1 $file2 >&2
    
    #eliminamos los espacios vacios + lineas en blanco
-
+   i=1
+   for arg in "${args[@]}"
+   do            
+        sed -e "s/ //g; /^$/d" $arg  > temp${i}.txt
+        let i=i+1
+   done
 
    #obtenemeos el numero de lineas iguales
-   iguales=$(grep -i -Fxf $file1 $file2 | wc -l)
+   let iguales=$(grep -i -Fxf temp1.txt temp2.txt | wc -l)
+ 
+   #obtenemos las lineas comparadas, obtenemos solo el numero y lo convertimos a entero
+   let lineas1=$(wc -l temp1.txt | awk '{print $1}')
+   let lineas2=$(wc -l temp2.txt | awk '{print $1}')
 
-   #obtenemos las lineas comparadas
-   lineas1=$(wc -l $file1 | cut )
-   lineas2=$(wc -l $file2)
-   
    #escogemos la mas grande para hacer el calculo
-   if [ $lineas1 -gt lineas2 ];then
+   if [ $lineas1 -gt $lineas2 ];then 
       lineas2=$lineas1
    fi
    
+   #operacion final
+   operacion=$(echo "scale=2; $iguales / $lineas2 * 100" | bc)
+   echo "El resultat es $operacion%" >> resultat/resultat.txt
+
+   rm temp1.txt & rm temp2.txt
+
 }
 
 compfitxer
