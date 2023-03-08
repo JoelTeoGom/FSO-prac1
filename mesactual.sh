@@ -13,14 +13,14 @@ then
     
     if [ $data1 -gt $data2 ]
     then
-        echo "$(pwd $file1)/$file1" >> resultat/data.txt
+        echo "$(pwd $file1)/$file1" >> resultat/recents.log
     else
-        echo "$(pwd $file2)/$file2" >> resultat/data.txt
+        echo "$(pwd $file2)/$file2" >> resultat/recents.log
     fi
 
 elif [ $data1 -gt $data2 ]
 then
-    echo "$(pwd $file1)/$file1" >> resultat/data.txt
+    echo "$(pwd $file1)/$file1" >> resultat/recents.log
 else
-    echo "$(pwd $file2)/$file2" >> resultat/data.txt
+    echo "$(pwd $file2)/$file2" >> resultat/recents.log
 fi

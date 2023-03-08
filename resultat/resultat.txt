@@ -1,15 +1,3 @@
-El resultat es 90.00%
-El resultat es 90.00%
-El resultat es 90.00%
-El resultat es 100.00%
-El resultat es 100.00%
-El resultat es 90.00%
-El resultat es 90.00%
-El resultat es 90.00%
-El resultat es 100.00%
-El resultat es 100.00%
-El resultat es 100.00%
-El resultat es 91.00%
-El resultat es 91.00%
-El resultat es 83.00%
-El resultat es 83.00%
+Els fitxers [/home/joel/Desktop/FSO/FSO-prac1/prova/hola1.txt || /home/joel/Desktop/FSO/FSO-prac1/prova2//hola1.txt]  es 50.00% semblant
+Els fitxers [/home/joel/Desktop/FSO/FSO-prac1/prova/hola2.txt || /home/joel/Desktop/FSO/FSO-prac1/prova2//hola2.txt]  es 0% semblant
+Els fitxers [/home/joel/Desktop/FSO/FSO-prac1/prova/hola.txt || /home/joel/Desktop/FSO/FSO-prac1/prova2//hola.txt]  es 9.00% semblant
