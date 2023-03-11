@@ -39,7 +39,7 @@ fi
 
 
 p_similitud=$(echo "scale=2; $suma / $n_file" | bc)
-echo "Els directoris [$dir1 || $dir2]  es $p_similitud% semblant" > resultat/resultatDir.txt
+echo "Els directoris [$dir1 || $dir2]  es $p_similitud% semblant" >> resultat/resultatDir.txt
 
 
 
