@@ -28,13 +28,17 @@ function compfitxer(){
         sed -e "s/ //g; /^$/d" $arg  > temp${i}.txt
         let i=i+1
    done
-
+   
    #obtenemeos el numero de lineas iguales
    let iguales=$(grep -i -Fxf temp1.txt temp2.txt | wc -l)
- 
+   let iguales2=$(grep -i -Fxf temp2.txt temp1.txt | wc -l)
+      if [ $iguales2 -lt $iguales ];then 
+      iguales=$iguales2
+   fi
+
    #obtenemos las lineas comparadas, obtenemos solo el numero y lo convertimos a entero
-   let lineas1=$(wc -l temp1.txt | awk '{print $1}')
-   let lineas2=$(wc -l temp2.txt | awk '{print $1}')
+   let lineas1=$(cat temp1.txt | wc -l)
+   let lineas2=$(cat temp2.txt | wc -l)
 
    #escogemos la mas grande para hacer el calculo
    if [ $lineas1 -gt $lineas2 ];then 

@@ -2,3 +2,7 @@ Els directoris [/home/joel/Desktop/FSO/FSO-prac1/prova2/ || /home/joel/Desktop/F
 Els directoris [/home/joel/Desktop/FSO/FSO-prac1/prova2/ || /home/joel/Desktop/FSO/FSO-prac1/prova]  es 35.00% semblant
 Els directoris [/home/joel/Desktop/FSO/FSO-prac1/prova2/ || /home/joel/Desktop/FSO/FSO-prac1/prova]  es 64.00% semblant
 Els directoris [prova || prova2]  es 64.00% semblant
+Els directoris [prova || prova2]  es 64.00% semblant
+Els directoris [prova2 || prova]  es 64.00% semblant
+Els directoris [prova2 || prova]  es 64.00% semblant
+Els directoris [prova || prova2]  es 64.00% semblant

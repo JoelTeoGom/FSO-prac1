@@ -36,8 +36,6 @@ if [ $(ls $dir2 | wc -l) -gt $(ls $dir1 | wc -l) ];then
     n_file=$(ls $dir2 | wc -l) 
 fi
 
-
-
 p_similitud=$(echo "scale=2; $suma / $n_file" | bc)
 echo "Els directoris [$dir1 || $dir2]  es $p_similitud% semblant" >> resultat/resultatDir.txt
 

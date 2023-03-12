@@ -6,10 +6,9 @@
 #percentatge total de similitud de les dues rutes rebudes per paràmetre. I que
 #en l'arxiu recents.log i hi hagi la informació de totes les rutes absolutes més noves.
 
-FSO-PRAC1/prova4/prova/prova1/   
+FSO-PRAC1/prova4/        
 
-
-FSO-PRAC1/prova3/provaxd/prova1
+FSO-PRAC1/prova3/    
 
 funcion {
 
@@ -49,7 +48,11 @@ for (){
 
 dir1    dir2
 
-f1      f1
-f2      f2
-f3      f3
-f4           
+l1      l1
+l2      l2
+l3      l3
+l4           
+
+3 / 4 *100
+
+0.75*100 = 75%

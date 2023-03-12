@@ -1,3 +1,8 @@
 Els fitxers [prova2/hola1.txt || prova/hola1.txt]  es 66.00% semblant
 Els fitxers [prova2/hola2.txt || prova/hola2.txt]  es 100.00% semblant
 Els fitxers [prova2/hola.txt || prova/hola.txt]  es 90.00% semblant
+Els fitxers [h1.txt || h2.txt]  es 75.00% semblant
+Els fitxers [h2.txt || h1.txt]  es 100.00% semblant
+Els fitxers [h2.txt || h1.txt]  es 80.00% semblant
+Els fitxers [h1.txt || h2.txt]  es 80.00% semblant
+Els fitxers [h2.txt || h1.txt]  es 80.00% semblant
