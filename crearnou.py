@@ -5,7 +5,7 @@ def crearnou(directori):
         # demanem al usuari que introdueixi un directori
         directori = input("La ruta especificada no és vàlida. Introdueix una ruta de directori vàlida: ")
 
-    # llegim les rutes del fitxer recents.log i les guardem en una llista
+    # llegim les rutes del fitxer recents.log i les guardem a una llista
     with open("recents.log", "r") as f:
         rutes = f.readlines()
     rutes = [ruta.strip() for ruta in rutes]
