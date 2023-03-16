@@ -9,10 +9,6 @@
 dir1=$1
 dir2=$2
 
-#seccion para resetear ficheros 
-rm resultat/resultat.txt
-rm resultat/recents.log
-
 let i=1
 suma=0
 for archivo in $(ls $dir1)

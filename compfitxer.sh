@@ -50,7 +50,7 @@ function compfitxer(){
    operacion=$(echo "scale=2; $iguales / $lineas2 * 100" | bc)
    echo "Els fitxers [$file1 || $file2]  es $operacion% semblant" >> resultat/resultat.txt
 
-   rm temp1.txt & rm temp2.txt
+   rm temp1.txt temp2.txt
 
 }
 
