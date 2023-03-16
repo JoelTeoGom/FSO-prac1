@@ -11,7 +11,7 @@ function crearnou() {
     # llegim les rutes del fitxer recents.log i les guardem en una llista
     rutes=($(cat recents.log))
 
-    # iterem sobre cada ruta i copiem el fitxer o directori a dins del directori indicat
+    # iterem sobre cada ruta i copiem el fitxer o directori a dins el directori indicat
     for ruta in "${rutes[@]}"
     do
         # comprovem si la ruta és un arxiu o directori
