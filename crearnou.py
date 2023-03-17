@@ -1,21 +1,23 @@
+#!/usr/bin/env python3
+
 import os
+import shutil
+import sys
+# Obtener el directorio recibido como parámetro
+dir = sys.argv[1]
 
-def crearnou(directori):
-    while not os.path.isdir(directori):
-        # demanem al usuari que introdueixi un directori
-        directori = input("La ruta especificada no és vàlida. Introdueix una ruta de directori vàlida: ")
+# Crear el directorio si no existe
+os.makedirs(dir, exist_ok=True)
 
-    # llegim les rutes del fitxer recents.log i les guardem a una llista
-    with open("recents.log", "r") as f:
-        rutes = f.readlines()
-    rutes = [ruta.strip() for ruta in rutes]
-
-    # iterem sobre cada ruta i copiem el fitxer o directori a dins del directori indicat
-    for ruta in rutes:
-        # comprovem si la ruta és un arxiu o directori
-        if os.path.isfile(ruta):
-            # si és un arxiu, copiem el contingut al directori indicat sense modificar les dates
-            os.system(f"cp -p {ruta} {directori}")
-        elif os.path.isdir(ruta):
-            # si és un directori, copiem el contingut recursivament al directori indicat sense modificar les dates
-            os.system(f"cp -rp {ruta} {directori}")
+# Leer el archivo recents.log línea por línea
+with open('resultat/recents.log', 'r') as f:
+  for line in f:
+    # Obtener la ruta del archivo original
+    orig = line.strip().replace('/home/joel/Desktop/FSO/FSO-prac1/', '')
+    print(orig)
+    # Obtener la ruta del archivo de destino
+    dest = os.path.join(dir, os.path.dirname(orig))
+    # Crear el directorio destino si no existe
+    os.makedirs(dest, exist_ok=True)
+    # Copiar el archivo original al directorio destino conservando la fecha de modificacion y creacion
+    shutil.copy2(orig, dest)

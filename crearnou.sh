@@ -1,34 +1,23 @@
 #!/bin/bash
 
-function crearnou() {
-    directori="$1"
-    while [ ! -d "$directori" ]
-    do
-        # demanem al usuari que introdueixi un directori
-        read -p "La ruta especificada no és vàlida. Introdueix una ruta de directori vàlida: " directori
-    done
+# Obtener el directorio recibido como parámetro
+dir=$1
 
-    # llegim les rutes del fitxer recents.log i les guardem en una llista
-    rutes=($(cat recents.log))
+# Crear el directorio si no existe
+mkdir -p "$dir"
 
-    # iterem sobre cada ruta i copiem el fitxer o directori a dins el directori indicat
-    for ruta in "${rutes[@]}"
-    do
-        # comprovem si la ruta és un arxiu o directori
-        tipus=$(tipus "$ruta")
-        if [ "$tipus" == 1 ]; then
-            # si és un arxiu, copiem el contingut al directori indicat sense modificar les dates
-            cp -p "$ruta" "$directori"
-        elif [ "$tipus" == 2 ]; then
-            # si és un directori, copiem el contingut recursivament al directori indicat sense modificar les dates
-            cp -rp "$ruta" "$directori"
-        fi
-    done
-}
+# Leer el archivo recents.log línea por línea
+cat resultat/recents.log | while read line
+do
+  #Obtener la ruta del archivo original
+  orig=$(echo "$line")
+  orig="${orig#"/home/joel/Desktop/FSO/FSO-prac1/"}"
+  echo $orig
+  #Obtenemos la ruta del archivo de destino
+  dest="$dir/$(dirname "$orig")"
+  # Creamos el directorio destino si no existe
+  mkdir -p "$dest"
+  # Copiamos el archivo original al directorio destino
+  cp -p "$orig" "$dest"
 
-
-
-
-
-
-
+done

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 source tipus.sh
 
 function compdir(){
@@ -65,8 +64,3 @@ else
    echo "Los argumentos deben ser directorios."
    exit 2
 fi
-
-
-
-
-
