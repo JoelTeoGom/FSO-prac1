@@ -32,6 +32,7 @@ res3=$?
 if [ $res1 -eq 1 ] && [ $res2 -eq 1 ]; then
     ./compfitxer.sh $1 $2
 elif [ $res1 -eq 2 ] && [ $res2 -eq 2 ]; then
+
    ./comptot.sh $1 $2
 else
    echo "Los argumentos deben de ser iguales ya que (ej: no podemos comparar un fichero solo con una ruta)"

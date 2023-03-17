@@ -24,6 +24,7 @@ function comptot(){
 
     while IFS= read -r root2
     do
+      
       ./compdir.sh $root1 $root2
       #acumulamos el valor de la suma seleccionando la ultima fila del fichero, sustituyendo %
       # por nada y obteniendo la septima columna. El scale 2 es para obtener dos decimales, sino nos

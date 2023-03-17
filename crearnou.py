@@ -3,6 +3,7 @@
 import os
 import shutil
 import sys
+import re
 # Obtener el directorio recibido como parámetro
 dir = sys.argv[1]
 
@@ -13,7 +14,18 @@ os.makedirs(dir, exist_ok=True)
 with open('resultat/recents.log', 'r') as f:
   for line in f:
     # Obtener la ruta del archivo original
-    orig = line.strip().replace('/home/joel/Desktop/FSO/FSO-prac1/', '')
+    # Obtener la ruta del archivo original
+    orig = line.strip()
+
+    # Eliminar hasta el directorio actual y luego eliminar FSO-prac1
+    match = re.search(r'/FSO-prac1(.*)', orig)
+    if match:
+        orig = match.group(1).replace('FSO-prac1/', '')
+
+    # le digo que empiece a partir de la primera barra para que me lo detecte como directorio
+    if orig.startswith('/'):
+        orig = orig[1:]
+    
     print(orig)
     # Obtener la ruta del archivo de destino
     dest = os.path.join(dir, os.path.dirname(orig))

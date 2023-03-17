@@ -11,7 +11,13 @@ cat resultat/recents.log | while read line
 do
   #Obtener la ruta del archivo original
   orig=$(echo "$line")
-  orig="${orig#"/home/joel/Desktop/FSO/FSO-prac1/"}"
+  #borro hasta el directorio actual y luego elimino FSO-prac1
+  orig=$(echo $orig | grep -o "/FSO-prac1.*" | sed 's/FSO-prac1\///')
+  #borro la primera barra inicial ya que impide que lo detecte como directorio
+  orig=${orig#"/"}
+  
+
+
   echo $orig
   #Obtenemos la ruta del archivo de destino
   dest="$dir/$(dirname "$orig")"

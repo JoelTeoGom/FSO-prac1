@@ -35,23 +35,26 @@ function compfitxer(){
         let i=i+1
    done
    
-   #obtenemeos el numero de lineas iguales y cogemos la mas pequeña ya que es la autentica
+   #obtenemeos el numero de lineas iguales y cogemos la mas pequeña ya que es la autentica,
+   #ya que el grep solo coge las lineas comparadas del primer fichero de argumento, por eso hay que comprobar
+   #los dos ficheros al reves y coger la mas pequeña. 
    let iguales=$(grep -i -Fxf temp1.txt temp2.txt | wc -l)
    let iguales2=$(grep -i -Fxf temp2.txt temp1.txt | wc -l)
       if [ $iguales2 -lt $iguales ];then 
       iguales=$iguales2
    fi
 
-   #obtenemos las lineas comparadas, obtenemos solo el numero y lo convertimos a entero
+   #obtenemos las lineas comparadas, obtenemos solo el numero y lo convertimos a entero con el let
    let lineas1=$(cat temp1.txt | wc -l)
    let lineas2=$(cat temp2.txt | wc -l)
 
-   #escogemos la mas grande para hacer el calculo 
+   #escogemos la mas grande para hacer el calculo porque no es lo mismo comparar 3 lineas com 4 lineas,
+   #por mucho que esas 3 lineas sean exactamente iguales como mucho el fichero podra parecerse en 75%
    if [ $lineas1 -gt $lineas2 ];then 
       lineas2=$lineas1
    fi
    
-   #operacion final
+   #operacion final amb scale 2 obtenim 2 decimals
    echo "$iguales / $lineas2 * 100"
    operacion=$(echo "scale=2; $iguales / $lineas2 * 100" | bc)
    echo "Els fitxers [$file1 || $file2]  es $operacion% semblant" >> resultat/resultat.txt
