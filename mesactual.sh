@@ -13,7 +13,7 @@ then
     
     if [ $data1 -gt $data2 ]
     then
-        echo "$(pwd $file1)/$file1" >> resultat/recents.log
+        echo "$(pwd $file1)/$file1" >> resultat/recents.log 
     else
         echo "$(pwd $file2)/$file2" >> resultat/recents.log
     fi

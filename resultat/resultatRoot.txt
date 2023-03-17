@@ -1,8 +1,2 @@
-Les rutes [prova4 || prova3] són 12.26% semblant
-Les rutes [prova4 || prova3] són 12.26% semblant
-Les rutes [prova4 || prova3] són 12.26% semblant
-Les rutes [prova4 || prova3] són 12.26% semblant
-Les rutes [prova4 || prova3] són 12.26% semblant
-Les rutes [prova4 || prova3] són 12.26% semblant
-Les rutes [prova4 || prova3]  son 12.25% semblant
-Les rutes [prova4 || prova3]  son 12.25% semblant
+Les rutes [prova || prova3]  son 15.88% semblant
+Les rutes [prova2 || prova3]  son 18.74% semblant
